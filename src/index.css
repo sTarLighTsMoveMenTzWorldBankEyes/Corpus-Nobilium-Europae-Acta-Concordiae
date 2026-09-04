@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-cinzel: "Cinzel", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Custom scrollbar for tables and modal drawers */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f4efe6;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4c8b8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b5a28c;
+}
+
+/* Glow Lighting & Reflector Effects */
+@keyframes goldPulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(229, 193, 112, 0.35), 0 0 30px rgba(197, 160, 89, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(229, 193, 112, 0.65), 0 0 50px rgba(197, 160, 89, 0.4);
+  }
+}
+
+@keyframes emeraldPulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.3), 0 0 30px rgba(5, 150, 105, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.6), 0 0 45px rgba(5, 150, 105, 0.35);
+  }
+}
+
+@keyframes mirrorShimmer {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(200%) rotate(25deg);
+  }
+}
+
+.glow-gold {
+  animation: goldPulseGlow 3.5s ease-in-out infinite;
+}
+
+.glow-emerald {
+  animation: emeraldPulseGlow 3.5s ease-in-out infinite;
+}
+
+/* Mirror reflection effect on cards */
+.mirror-reflect {
+  position: relative;
+  overflow: hidden;
+}
+.mirror-reflect::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  transform: translateX(-100%) rotate(25deg);
+  pointer-events: none;
+  transition: transform 0.8s ease;
+}
+.mirror-reflect:hover::after {
+  transform: translateX(100%) rotate(25deg);
+}
+
+/* Glass Reflector */
+.glass-reflector {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(229, 193, 112, 0.3);
+}
+
+.glass-reflector-dark {
+  background: rgba(26, 17, 21, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+}
+
+/* BESA eID Badge 3D Squirrel Spin & Gold Ripple */
+@keyframes squirrelSpin3D {
+  0% {
+    transform: translate(56px, 60px) rotateY(0deg) scale(1);
+  }
+  50% {
+    transform: translate(56px, 60px) rotateY(180deg) scale(1.15);
+  }
+  100% {
+    transform: translate(56px, 60px) rotateY(360deg) scale(1);
+  }
+}
+
+@keyframes goldRippleGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(229, 193, 112, 0.75), 0 0 0 0 rgba(212, 175, 55, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(229, 193, 112, 0), 0 0 0 20px rgba(212, 175, 55, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(229, 193, 112, 0), 0 0 0 0 rgba(212, 175, 55, 0);
+  }
+}
+
+.group\/besa:hover #squirrel-avatar {
+  animation: squirrelSpin3D 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  transform-origin: 32px 36px;
+  transform-box: local;
+}
+
+.group\/besa:hover .besa-ripple-effect {
+  animation: goldRippleGlow 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+

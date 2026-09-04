@@ -1,0 +1,6 @@
+{
+  "name": "Europäische Adelshäuser & Acta Concordiae",
+  "description": "Verzeichnis von 360 europäischen Adelshäusern mit interaktivem Epochen-Zeitstrahl (Mittelalter, Renaissance, Neuzeit), Wappen-Mosaik, diplomatischem Status im Acta Concordiae Friedensplan und E-Mail-Dispatcher.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
